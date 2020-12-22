@@ -28,24 +28,23 @@ function setup(){
   }
 
   for(var j=40;j<=width;j=j+50){
-    plinkos.push(new Plinko(j,75,5));
+    plinkos.push(new Plinko(j,75,10));
   }
 
   for(var p=15;p<=width;p=p+50){
-    plinkos2.push(new Plinko(p,175,5));
+    plinkos2.push(new Plinko(p,175,10));
   }
 
   for(var c=40;c<=width;c=c+50){
-    plinkos3.push(new Plinko(c,275,5));
+    plinkos3.push(new Plinko(c,275,10));
   }
 
   for(var n=15;n<=width;n=n+50){
-    plinkos4.push(new Plinko(n,375,5));
+    plinkos4.push(new Plinko(n,375,10));
   }
+ 
 
-  if(frameCount%60===0){
-    particles.push(new Particle(random(width/2-10,width/2+10,),10,5))
-  }
+  
 
 }
 
@@ -72,8 +71,13 @@ function draw(){
     plinkos4[n].display();
   }
 
-  for(var l=0;l < particles.length;l++){
-    particles[l].display();
+  if(frameCount%90===0){
+    particles.push(new Particle(random(width/2-10,width/2+10),10,10))
+  }
+
+  for(var e =0;e < particles.length;e++){
+    particles[e].display();
+   
   }
 
   ground.display();

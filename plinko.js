@@ -1,6 +1,8 @@
 class Plinko {
     constructor(x,y,r){
         var options={
+            restitution:1,
+            friction:0,
             isStactic:true
         }
         this.x=x;

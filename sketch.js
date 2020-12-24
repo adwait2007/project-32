@@ -15,8 +15,10 @@ var sling;
 var ball;
 var img;
 
+
 function preload(){
   img = loadImage("hexagon (1).png");
+ 
 
 }
 
@@ -68,12 +70,13 @@ function setup() {
   ball = Bodies.circle(50,200,20);
   World.add(world,ball);
 
-  sling = new Chain(this.ball,{x:150, y:160});
+  sling = new Chain(this.ball,{x:150, y:160})
+  
 
 }
 
 function draw() {
-  background("purple");
+  getBackground();
   Engine.update(engine);
 
   fill(rgb(135, 205, 236));
@@ -121,6 +124,11 @@ function draw() {
   image(img,ball.position.x,ball.position.y,40,40);
 
   sling.display();
+
+ 
+  
+  
+  
 }
 
 
@@ -139,3 +147,17 @@ function keyPressed(){
 		sling.attach(this.ball);
 	}
 }
+
+ async function getBackground(){
+   var response=await fetch("http://worldclockapi.com/api/json/est/now");
+   var responseJSON=await response.json();
+   
+   var datetime= responseJSON.currentDateTime;
+   var hour=datetime.slice(11,13);
+   if(hour>=06 && hour<=19){
+     background("Blue");
+
+   }else{
+     background("lightBlue");
+   }
+ }

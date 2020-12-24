@@ -76,7 +76,7 @@ function setup() {
 }
 
 function draw() {
-  getBackground();
+
   Engine.update(engine);
 
   fill(rgb(135, 205, 236));
@@ -124,10 +124,8 @@ function draw() {
   image(img,ball.position.x,ball.position.y,40,40);
 
   sling.display();
-
- 
   
-  
+    getBackground();	
   
 }
 

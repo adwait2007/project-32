@@ -148,16 +148,17 @@ function keyPressed(){
 	}
 }
 
- async function getBackground(){
-   var response=await fetch("http://worldclockapi.com/api/json/est/now");
-   var responseJSON=await response.json();
-   
-   var datetime= responseJSON.currentDateTime;
-   var hour=datetime.slice(11,13);
-   if(hour>=06 && hour<=19){
-     background("Blue");
+async function getBackground(){
+  var response=await fetch("http://worldclockapi.com/api/json/est/now");
+  var responseJSON=await response.json();
+  
+  var datetime= responseJSON.currentDateTime;
+  var hour=datetime.slice(11,13);
+  if(hour>=06 && hour<=19){
+    background("Blue");
 
-   }else{
-     background("lightBlue");
-   }
- }
+  }else{
+    background("lightBlue");
+  }
+}
+

@@ -13,11 +13,13 @@ var block22;
 var sling;
 
 var ball;
-var img;
+var img,Blue,lightBlue;
 
 
 function preload(){
   img = loadImage("hexagon (1).png");
+  Blue=loadImage("blue.jpg");
+  lightBlue=loadImage("light blue.png");
  
 
 }
@@ -155,10 +157,10 @@ async function getBackground(){
   var datetime= responseJSON.currentDateTime;
   var hour=datetime.slice(11,13);
   if(hour>=06 && hour<=19){
-    background("Blue");
+    background(lightBlue);
 
   }else{
-    background("lightBlue");
+    background(Blue);
   }
 }
 
